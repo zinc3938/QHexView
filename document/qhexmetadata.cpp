@@ -1,11 +1,14 @@
-#include "qhexmetadata.h"
+﻿#include "qhexmetadata.h"
 
 QHexMetadata::QHexMetadata(QObject *parent) : QObject(parent) { }
 
-const QHexLineMetadata &QHexMetadata::get(quint64 line) const
+QHexLineMetadata QHexMetadata::get(quint64 line) const
 {
     auto it = m_metadata.find(line);
-    return it.value();
+    QHexLineMetadata result ;
+    std::copy(it.value().begin(), it.value().end(), std::back_inserter(result));
+
+    return result;
 }
 
 QString QHexMetadata::comments(quint64 line, int column) const

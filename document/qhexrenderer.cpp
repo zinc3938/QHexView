@@ -1,4 +1,4 @@
-#include "qhexrenderer.h"
+﻿#include "qhexrenderer.h"
 #include <QApplication>
 #include <QTextCursor>
 #include <QWidget>
@@ -249,7 +249,7 @@ void QHexRenderer::applyMetadata(QTextCursor &textcursor, quint64 line, Factor f
     if(!metadata->hasMetadata(line))
         return;
 
-    const QHexLineMetadata& linemetadata = metadata->get(line);
+    QHexLineMetadata linemetadata = metadata->get(line);
 
     for(const QHexMetadataItem& mi : linemetadata)
     {

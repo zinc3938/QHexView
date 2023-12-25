@@ -1,4 +1,4 @@
-#ifndef QHEXMETADATA_H
+﻿#ifndef QHEXMETADATA_H
 #define QHEXMETADATA_H
 
 #include <QtGlobal>
@@ -40,7 +40,7 @@ class QHexMetadata : public QObject
 
     public:
         explicit QHexMetadata(QObject *parent = nullptr);
-        const QHexLineMetadata& get(quint64 line) const;
+       QHexLineMetadata get(quint64 line) const;
         QString comments(quint64 line, int column) const;
         bool hasMetadata(quint64 line) const;
 
