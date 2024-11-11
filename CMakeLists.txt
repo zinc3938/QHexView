@@ -4,7 +4,7 @@ project(QHexView
     LANGUAGES CXX
 )
 
-find_package(Qt5 COMPONENTS Widgets REQUIRED)
+find_package(Qt${QT_VERSION} COMPONENTS Widgets REQUIRED)
 
 add_library(qhexview-lib STATIC
     document/buffer/qfilebuffer.cpp
@@ -28,5 +28,5 @@ set_target_properties(qhexview-lib PROPERTIES
     CXX_STANDARD_REQUIRED ON
 )
 
-target_link_libraries(qhexview-lib PRIVATE Qt5::Widgets)
+target_link_libraries(qhexview-lib PRIVATE Qt${QT_VERSION}::Widgets)
 target_include_directories(qhexview-lib PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}")
